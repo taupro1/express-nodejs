@@ -1,0 +1,16 @@
+extends ../layouts/common
+
+block content
+    h1 Login 
+
+    form(action="/auth/login" method="POST")
+        .form-group
+            label(for='exampleInputEmail1') Email
+            input.form-control(type='email' name='email' placeholder='Enter email' value=value&&value.email?value.email:'')
+            if error&&error.isErrorEmail
+                div(class="alert alert-danger" role="alert")=error.isErrorEmail
+            label(for='exampleInputEmail1') Password
+            input.form-control(type='password' name='password' placeholder='Enter password' value=value&&value.password?value.password:'')
+            if error&&error.isErrorPassword
+                div(class="alert alert-danger" role="alert")=error.isErrorPassword
+        button.btn.btn-primary.ml-0(type='submit') Login

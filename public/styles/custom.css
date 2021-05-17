@@ -1,0 +1,29 @@
+body {
+    color: black;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+    border: none;
+    text-decoration: none
+}
+
+button {
+    font-size: 12px!important;
+    margin-left: 10px;
+}
+
+li {
+    margin-bottom: 12px;
+    font-size: 13px;
+}
