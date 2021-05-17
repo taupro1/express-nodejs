@@ -1,0 +1,29 @@
+extends ../layouts/common
+
+block content
+    h1 User
+    button.btn.btn-primary.ml-0.mb-3
+        a(href='/user/create') Create
+    form(action="/user/search" method="GET" style="display:flex")
+        div(class="input-group" style="width:50%")
+            div(class="input-group-prepend")
+                span(class="input-group-text" id="basic-addon1") @
+            input(name='name' type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1")
+        button.btn.btn-dark Search
+    table.table 
+        tr
+            th Avatar
+            th Name 
+            th Phone 
+            th Actions 
+        each val in users 
+            tr
+                td 
+                    img(src=val.avatar width='30')
+                td=val.name
+                td=val.phone
+                td(style='padding-left:0')  
+                    button.btn.btn-danger 
+                        a(href='/user/remove/' + val.id) Delete
+                    button.btn.btn-info
+                        a(href='/user/infomation/' + val.id) View    
